@@ -18,7 +18,6 @@ export class ProveedorPaqueticoComponent implements OnInit {
   }
 
   get Proveedores() : Proveedore[]{
-    console.log(this.paqueticoService.proveedores)
     return this.paqueticoService.proveedores;
   }
 

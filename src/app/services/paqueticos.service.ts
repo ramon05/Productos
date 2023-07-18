@@ -28,7 +28,6 @@ export class PaqueticosService {
   }
 
   obtenerPlanesPaqueticos(){
-    debugger;
     const headers = authHeader();
     this.http.get<PlanesPaqueticosResponse>('https://localhost:7207/api/Paquetico/ConsultaPaquetico?Nic=8099834723&Proveedor=orange', {headers}) 
         .subscribe( resp => { // json data
