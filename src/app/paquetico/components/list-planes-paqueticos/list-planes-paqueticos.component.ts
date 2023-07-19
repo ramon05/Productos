@@ -15,4 +15,6 @@ export class ListPlanesPaqueticosComponent implements OnInit {
 
   @Input()
   public planesPaquetico: Paquetes[] = [];
+
+
 }

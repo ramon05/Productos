@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core"
 import { RouterModule, Routes } from "@angular/router"
 import { ProveedorPaqueticoComponent } from "./proveedor-paquetico/proveedor-paquetico.component"
 import { PlanesPaqueticoComponent } from "./planes-paquetico/planes-paquetico.component"
+import { VenderPaqueticoComponent } from "./vender-paquetico/vender-paquetico.component"
 
 const routes: Routes = [
     {
@@ -11,6 +12,10 @@ const routes: Routes = [
     {
         path: 'PlanesPaquetico',
         component: PlanesPaqueticoComponent
+    },
+    {
+        path: 'venderPaquetico',
+        component: VenderPaqueticoComponent
     }
 ]
 @NgModule({
