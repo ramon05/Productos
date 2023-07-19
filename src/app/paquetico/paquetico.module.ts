@@ -5,6 +5,7 @@ import { ProveedorPaqueticoComponent } from './proveedor-paquetico/proveedor-paq
 import { CardListProveedorRecargaComponent } from './components/card-list-proveedor-recarga/card-list-proveedor-recarga.component';
 import { ListPlanesPaqueticosComponent } from './components/list-planes-paqueticos/list-planes-paqueticos.component';
 import { PaqueticosRoutingModule } from './paqueticos-routing.module';
+import { MaterialModule } from '../material/material/material.module';
 
 
 
@@ -22,7 +23,8 @@ import { PaqueticosRoutingModule } from './paqueticos-routing.module';
   
   imports: [
     CommonModule,
-    PaqueticosRoutingModule
+    PaqueticosRoutingModule,
+    MaterialModule
   ],
 })
 export class PaqueticoModule { }

@@ -8,6 +8,8 @@ import { RecargaModule } from './recarga/recarga.module';
 import { AppComponent } from './app.component';
 import { SidebarModule } from './shared/components/sidebar/sidebar.module';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material/material.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    RouterModule,
+    MaterialModule,
     PaqueticoModule,
     RecargaModule,
     SidebarModule,
-    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

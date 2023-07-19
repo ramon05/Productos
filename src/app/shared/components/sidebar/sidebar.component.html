@@ -1,23 +1,58 @@
-<h2>Productos</h2>
-<hr>
+<mat-sidenav-container fullscreen>
 
-<ul class="list-group">
-    <li class="list-group-item">
-        <a routerLink="Paqueticos">Paquetico</a>
-        <ul>
-            <li><a routerLink="Paqueticos/Proveedores">Proveedor</a></li>
-            <li><a routerLink="Paqueticos/PlanesPaquetico">Planes Paquetico</a></li>
-        </ul>
-    </li>
-    <li class="list-group-item">
-        <a routerLink="Recargas">Recargas</a>
-        <ul>
-            <li>
-                <a routerLink="Recargas/Proveedores">Proveedor</a>
-            </li>
-            <li>
-                <a routerLink="Recargas/Balances">Balances</a>
-            </li>
-        </ul>
-    </li>
-</ul>
+    <mat-sidenav #sidenav mode="push" [ngStyle]="{ width: '250px' }">
+        <mat-toolbar color="primary">
+            <span>Menú</span>
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <mat-list-item routerLink="#">
+                <mat-icon>dashboard</mat-icon><span>Dashboard</span>
+            </mat-list-item>
+            <mat-expansion-panel [class.mat-elevation-z0]="true">
+                <mat-expansion-panel-header>
+                    Recargas
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="Recargas/Proveedores" (click)="sidenav.toggle()">Proveedores</a>
+                    <a mat-list-item routerLink="Recargas/Balances" (click)="sidenav.toggle()">Balances</a>
+                    <a mat-list-item routerLink="Recargas/Venta" (click)="sidenav.toggle()">Vender</a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel [class.mat-elevation-z0]="true">
+                <mat-expansion-panel-header>
+                    Paqueticos
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="Paqueticos/Proveedores" (click)="sidenav.toggle()">Proveedores</a>
+                    <a mat-list-item routerLink="Paqueticos/PlanesPaquetico" (click)="sidenav.toggle()">Planes Paqueticos</a>
+                    <a mat-list-item routerLink="#" (click)="sidenav.toggle()">Venta</a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span class="spacer"></span>
+
+        <button mat-button>
+            Logout
+        </button>
+
+    </mat-toolbar>
+    
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>

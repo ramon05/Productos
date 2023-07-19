@@ -4,14 +4,8 @@ import { ProveedorPaqueticoComponent } from "./proveedor-paquetico/proveedor-paq
 import { PlanesPaqueticoComponent } from "./planes-paquetico/planes-paquetico.component"
 
 const routes: Routes = [
-    {
-        path: 'Proveedores',
-        component: ProveedorPaqueticoComponent
-    },
-    {
-        path: 'PlanesPaquetico',
-        component: PlanesPaqueticoComponent
-    }
+    { path: 'Proveedores', component: ProveedorPaqueticoComponent },
+    { path: 'PlanesPaquetico', component: PlanesPaqueticoComponent }
 ]
 @NgModule({
  imports: [
