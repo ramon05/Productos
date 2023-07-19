@@ -7,6 +7,8 @@ import { ListPlanesPaqueticosComponent } from './components/list-planes-paquetic
 import { PaqueticosRoutingModule } from './paqueticos-routing.module';
 import { VenderPaqueticoComponent } from './vender-paquetico/vender-paquetico.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material/material.module';
+
 
 
 
@@ -28,8 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     PaqueticosRoutingModule,
     ReactiveFormsModule,
-    
-  ]
- 
+    MaterialModule
+  ],
+
 })
 export class PaqueticoModule { }

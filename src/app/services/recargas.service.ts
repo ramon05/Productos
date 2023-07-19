@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { authHeader } from '../Helpers/authHeader';
 import { Proveedore, ProveedoresRecargaResponse } from '../recarga/interfaces/proveedorRecarga.interface';
 import { Balance, BalanceRecargaResponse } from '../recarga/interfaces/balanceRecarga';
+import { Data, VentaRecarga, VentaRecargaResponse } from '../recarga/interfaces/ventaRecarga';
+import { Observable, map, tap } from 'rxjs';
 
 
 @Injectable({
@@ -12,6 +14,7 @@ export class RecargasService {
 
   public proveedores: Proveedore[] = [];
   public balance!: Balance;
+  public venta!: Data;
 
   constructor(private http: HttpClient) { }
 
@@ -39,5 +42,10 @@ export class RecargasService {
           console.log('Error: ', error);
       }
     );
+  }
+
+  ventaRecarga(ventaRecarga: VentaRecarga): Observable<VentaRecargaResponse> {
+    const headers = authHeader();
+    return this.http.post<VentaRecargaResponse>('https://localhost:7207/api/Recargas/Vender', ventaRecarga, {headers})
   }
 }

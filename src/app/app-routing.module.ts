@@ -4,10 +4,6 @@ import { AppComponent } from "./app.component";
 
 const routes: Routes = [
     {
-        path: 'home',
-        component: AppComponent
-    },
-    {
         path: 'Paqueticos',
         loadChildren: () => import('./paquetico/paquetico.module').then(m => m.PaqueticoModule)
     },
@@ -16,8 +12,9 @@ const routes: Routes = [
         loadChildren: () => import('./recarga/recarga.module').then(m => m.RecargaModule)
     },
     {
-        path: '**',
-        redirectTo: 'home'
+        path: '',
+        redirectTo: 'Recargas',
+        pathMatch: 'full'
     }    
 ]
 

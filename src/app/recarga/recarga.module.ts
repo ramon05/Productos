@@ -4,6 +4,9 @@ import { ProveedorRecargaComponent } from './proveedor-recarga/proveedor-recarga
 import { ListProveedoresRecargaComponent } from './components/list-proveedores-recarga/list-proveedores-recarga.component';
 import { RecargasRoutingModule } from './recarga-routing.module';
 import { BalanceComponent } from './balance/balance.component';
+import { VentaRecargaComponent } from './venta-recarga/venta-recarga.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material/material.module';
 
 
 
@@ -11,7 +14,8 @@ import { BalanceComponent } from './balance/balance.component';
   declarations: [
     ProveedorRecargaComponent,
     ListProveedoresRecargaComponent,
-    BalanceComponent
+    BalanceComponent,
+    VentaRecargaComponent,
   ],
   exports: [
     ListProveedoresRecargaComponent,
@@ -19,7 +23,9 @@ import { BalanceComponent } from './balance/balance.component';
   ],
   imports: [
     CommonModule,
-    RecargasRoutingModule
+    ReactiveFormsModule,
+    RecargasRoutingModule,
+    MaterialModule
   ]
 })
 export class RecargaModule { }

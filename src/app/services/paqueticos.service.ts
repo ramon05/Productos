@@ -41,6 +41,7 @@ export class PaqueticosService {
             }
         );
   }
+  
   VenderPaqueticos( datos: ventaPaquetico){
     debugger;
    var url = 'https://localhost:7207/api/Paquetico/Vender';
@@ -54,5 +55,6 @@ export class PaqueticosService {
             }
         );
   }
+
 }
 

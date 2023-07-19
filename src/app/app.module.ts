@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { SidebarModule } from './shared/components/sidebar/sidebar.module';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material/material.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,10 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    RouterModule,
+    MaterialModule,
     PaqueticoModule,
     RecargaModule,
     SidebarModule,
