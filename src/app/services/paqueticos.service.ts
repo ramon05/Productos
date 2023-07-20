@@ -43,7 +43,6 @@ export class PaqueticosService {
   }
   
   VenderPaqueticos( datos: ventaPaquetico){
-    debugger;
    var url = 'https://localhost:7207/api/Paquetico/Vender';
     const headers = authHeader();
     this.http.post<venderPaqueticoResponse>(url,datos, {headers}) 

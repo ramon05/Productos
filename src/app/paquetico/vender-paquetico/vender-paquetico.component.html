@@ -1,44 +1,101 @@
-<div>
-    <h1>Vender Paquetico</h1>
 
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="name">terminalID:</label>
-        <input type="text" id="terminalID" formControlName="terminalID" required>
-      </div>
-      <div>
-        <label for="name">solicituID:</label>
-        <input type="text" id="solicituID" formControlName="solicituID" required>
-      </div>
-      <!--<div>
-        <label for="name">monto:</label>
-        <input type="text" id="monto" formControlName="monto" required>
-      </div>-->
-      <div>
-        <label for="name">nic:</label>
-        <input type="text" id="nic" formControlName="nic" required>
-      </div>
-      <div>
-        <label for="name">proveedorId:</label>
-        <input type="text" id="proveedorId" formControlName="proveedorId" required>
-      </div>
-      <div>
-        <label for="mySelect">Selecciona un plan_Id:</label> 
-        <select class="form-select" id="mySelect" formControlName="plan_Id">
-            <option  *ngFor="let option of planesPaquetico" [value]="option.id">{{ option.nombre }} </option>
-        </select>
-      </div>
-      <br>
-      <div>
-        <label for="mySelect">Selecciona un proveedor:</label> 
-        <select class="form-select" id="mySelectp" formControlName="proveedor">
-            <option  *ngFor="let options of proveedores" [value]="options.nombre">{{ options.nombre }} </option>
-        </select>
-      </div>
+    <h1 class=" justify-content-center">Vender Paquetico</h1>
     
-      <br>
-      <button type="submit" [disabled]="myForm.invalid">Enviar</button>
-    </form>
-    <p *ngIf="submitted">Formulario enviado correctamente.</p>
-    <!--<button style="width: 100px;height: 100px; color: aquamarine;" (click)="venderPaquetico()">Vender</button>-->
+<div class="row">
+
+  <div class="col">
+
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" autocomplete="off">
+          <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                  <input  type="text" 
+                          class="form-control"
+                          formControlName="terminalID"
+                          placeholder="Terminal">
+
+                        
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                  <input  type="text" 
+                          class="form-control"
+                          formControlName="solicituID"
+                          placeholder="solicituID">
+    
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                  <input  type="text" 
+                          class="form-control"
+                          formControlName="monto"
+                          placeholder="monto">
+        
+              </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <input  type="text" 
+                        class="form-control"
+                        formControlName="nic"
+                        placeholder="nic">
+       
+            </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label"></label>
+          <div class="col-sm-9">
+              <input  type="text" 
+                      class="form-control"
+                      formControlName="proveedorId"
+                      placeholder="proveedorId">        
+          </div>
+      </div>
+
+          <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                  <select class="form-control" formControlName="proveedor" placeholder="Enter Proveedor">
+                      <option value="" disabled selected>Seleccionar Proveedor</option>
+                      <option *ngFor="let proveedor of proveedores" [value]="proveedor.nombre">
+                          {{proveedor.nombre}}
+                      </option>
+                   </select>
+                          
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <select class="form-control" formControlName="plan_Id" placeholder="Enter Proveedor">
+                    <option value="" disabled selected>Seleccionar un plan_Id</option>
+                    <option *ngFor="let option of planesPaquetico" [value]="option.id">
+                        {{option.nombre}}
+                    </option>
+                 </select>
+                     
+            </div>
+        </div>
+          <div class="row">
+              <div class="col- mr-7">
+                  <button type="submit" [disabled]="myForm.invalid"
+                          class="btn btn-primary float-end">
+                      Vender
+                  </button>
+              </div>
+          </div>
+      </form>
+
+  </div>
+
 </div>
+
+    
