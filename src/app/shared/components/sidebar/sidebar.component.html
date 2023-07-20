@@ -1,5 +1,4 @@
 <mat-sidenav-container fullscreen>
-
     <mat-sidenav #sidenav mode="push" [ngStyle]="{ width: '250px' }">
         <mat-toolbar color="primary">
             <span>Menú</span>
@@ -31,7 +30,7 @@
                 <mat-nav-list>
                     <a mat-list-item routerLink="Paqueticos/Proveedores" (click)="sidenav.toggle()">Proveedores</a>
                     <a mat-list-item routerLink="Paqueticos/PlanesPaquetico" (click)="sidenav.toggle()">Planes Paqueticos</a>
-                    <a mat-list-item routerLink="#" (click)="sidenav.toggle()">Venta</a>
+                    <a mat-list-item routerLink="Paqueticos/venderPaquetico" (click)="sidenav.toggle()">Venta</a>
                 </mat-nav-list>
             </mat-expansion-panel>
         </mat-nav-list>
@@ -56,3 +55,4 @@
     </div>
 
 </mat-sidenav-container>
+

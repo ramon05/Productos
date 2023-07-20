@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { authHeader } from 'src/app/Helpers/authHeader';
 import { ProveedorResponse, Proveedore } from '../paquetico/interfaces/proveedorPaquetico.interface';
 import { Paquetes, PlanesPaqueticosResponse } from '../paquetico/interfaces/planesPaqueticos.interface';
+import { venderPaqueticoResponse, ventaPaquetico } from '../paquetico/interfaces/ventaPaqueticos.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class PaqueticosService {
   
   public proveedores: Proveedore[] = [];
   public planesPaquetico: Paquetes[] = [];
+  public VentaPaquetico: venderPaqueticoResponse[]=[];
   
   constructor(private http: HttpClient) { }
 
@@ -40,5 +42,18 @@ export class PaqueticosService {
         );
   }
   
+  VenderPaqueticos( datos: ventaPaquetico){
+   var url = 'https://localhost:7207/api/Paquetico/Vender';
+    const headers = authHeader();
+    this.http.post<venderPaqueticoResponse>(url,datos, {headers}) 
+        .subscribe( resp => { // json data
+              console.log(resp);
+            },
+            error => {
+                console.log('Error: ', error);
+            }
+        );
+  }
+
 }
 

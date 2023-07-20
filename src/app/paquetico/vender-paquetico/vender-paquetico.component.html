@@ -1,0 +1,101 @@
+
+    <h1 class=" justify-content-center">Vender Paquetico</h1>
+    
+<div class="row">
+
+  <div class="col">
+
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" autocomplete="off">
+          <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                  <input  type="text" 
+                          class="form-control"
+                          formControlName="terminalID"
+                          placeholder="Terminal">
+
+                        
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                  <input  type="text" 
+                          class="form-control"
+                          formControlName="solicituID"
+                          placeholder="solicituID">
+    
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                  <input  type="text" 
+                          class="form-control"
+                          formControlName="monto"
+                          placeholder="monto">
+        
+              </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <input  type="text" 
+                        class="form-control"
+                        formControlName="nic"
+                        placeholder="nic">
+       
+            </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label"></label>
+          <div class="col-sm-9">
+              <input  type="text" 
+                      class="form-control"
+                      formControlName="proveedorId"
+                      placeholder="proveedorId">        
+          </div>
+      </div>
+
+          <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                  <select class="form-control" formControlName="proveedor" placeholder="Enter Proveedor">
+                      <option value="" disabled selected>Seleccionar Proveedor</option>
+                      <option *ngFor="let proveedor of proveedores" [value]="proveedor.nombre">
+                          {{proveedor.nombre}}
+                      </option>
+                   </select>
+                          
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <select class="form-control" formControlName="plan_Id" placeholder="Enter Proveedor">
+                    <option value="" disabled selected>Seleccionar un plan_Id</option>
+                    <option *ngFor="let option of planesPaquetico" [value]="option.id">
+                        {{option.nombre}}
+                    </option>
+                 </select>
+                     
+            </div>
+        </div>
+          <div class="row">
+              <div class="col- mr-7">
+                  <button type="submit" [disabled]="myForm.invalid"
+                          class="btn btn-primary float-end">
+                      Vender
+                  </button>
+              </div>
+          </div>
+      </form>
+
+  </div>
+
+</div>
+
+    
