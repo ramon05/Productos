@@ -18,12 +18,12 @@ export class VentaRecargaComponent implements OnInit {
     ) { }
   
   public ventaForm: FormGroup = this.fb.group({
-    terminalID: [0],
-    solicituID: [0],
-    monto: [0],
+    terminalID: [],
+    solicituID: [],
+    monto: [],
     proveedor: [''],
     nic: [''],
-    proveedorID: [0]
+    proveedorID: []
   });
 
   ngOnInit(): void {
